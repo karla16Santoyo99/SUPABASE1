@@ -24,7 +24,7 @@ export default function Home() {
  
       {!session ? <Auth /> : <Routes key={session.user.id} session={session} /> } 
     
-            {/* <Account key={session.user.id} session={session} /> */}
+           
 </div>
   );
 }
