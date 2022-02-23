@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -7,16 +7,17 @@ import { CardActionArea } from '@mui/material';
 import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
+import { cyan } from '@mui/material/colors';
 
 export default function MultiActionAreaCard({ titulo, fechacreacion, contenido, fecharecordatorio }) {
   return (
-    <Card sx={{ display: 'flex', height: 150, width: 700 }}>
+    <Card sx={{ display: 'flex', height: 150, width: 700, bgcolor: cyan[100] }}>
 
       <CardActionArea>
-        <CardContent sx={{ flex: '1 0 auto' }}>
+        <CardContent sx={{ flex: '1 3 auto' }}>
 
           <Typography gutterBottom variant="body2" component="div" color="gray">
-            {/* color="text.secondary" */}
+           
             Titulo:
             <Typography variant="body2" color="Black">
               {titulo}
@@ -44,15 +45,18 @@ export default function MultiActionAreaCard({ titulo, fechacreacion, contenido, 
           </Typography>
         </CardContent>
       </CardActionArea>
-
+      
       <Button variant="outlined" startIcon={<DeleteIcon />}>
-        Delete
+        Borrar
       </Button>
-      <Button variant="contained" endIcon={<SendIcon />}>
+
+<Button variant="outlined" endIcon={<SendIcon />}>
         <Link to="/Recordatorios">
           Editar
         </Link>
       </Button>
+    
+      
 
 
     </Card>

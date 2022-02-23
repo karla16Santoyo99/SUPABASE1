@@ -64,7 +64,7 @@ export default function RecordatorioAdd({session}) {
 
                 
             let { error } = await supabase.from("recordatorio").insert(Agregar, {
-                returning: "minimal", // Don't return the value after inserting
+                returning: "minimal", 
             });
 
             if (error) {

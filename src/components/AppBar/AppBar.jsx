@@ -12,7 +12,7 @@ const Navbar = () => {
         <div>
 
             <Box sx={{ flexGrow: 1 }}>
-               
+
                 <AppBar position="fixed" sx={{ bgcolor: cyan[700] }}>
 
                     <Toolbar>
@@ -32,12 +32,10 @@ const Navbar = () => {
                             </Link>
                         </Typography>
                         <Typography variant='h6' component="div" sx={{ flexGrow: 2 }}>
-                            
+
                         </Typography>
-                        <Typography variant='h6' component="div" sx={{ flexGrow: 2 }}>
-                            Bienvenido
-                        </Typography>
-                        
+                       
+
                         <Button color="inherit">
                             < Link to="/AddRecordatorio">
                                 Nuevo Recordatorio
@@ -50,6 +48,11 @@ const Navbar = () => {
                             </a>
                         </Button>
 
+                        <Button color="inherit" >
+                            <Link to="/Account">
+                                Perfil
+                            </Link>
+                        </Button>
 
 
 
@@ -59,11 +62,7 @@ const Navbar = () => {
 
 
 
-                        <Button color="inherit" >
-                            <Link to="/Account">
-                                Perfil
-                            </Link>
-                        </Button>
+
 
 
 
