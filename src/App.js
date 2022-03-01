@@ -2,8 +2,9 @@ import './index.css'
 import { useState, useEffect } from 'react'
 import { supabase } from './config/supabaseClient'
 import Auth from './components/Auth'
-// import Recordatorios from "./components/Recordatorios";
-import Routes from './components/Routes/Routes'
+
+//import Routes from './components/Routes/Routes'
+import Account from './components/Account'
 
 
 
@@ -22,7 +23,7 @@ export default function Home() {
     <div className="container" style={{ padding: '50px 0 100px 0' }}>
 
  
-      {!session ? <Auth /> : <Routes key={session.user.id} session={session} /> } 
+      {!session ? <Auth /> : <Account key={session.user.id} session={session} /> } 
     
            
 </div>
