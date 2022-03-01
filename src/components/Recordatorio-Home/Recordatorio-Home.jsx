@@ -59,6 +59,7 @@ export default function RecordatorioHome({session}) {
         <Grid container padding={10} spacing={7} className="CARD">
         <Grid item xs={12} sm={6} md={4} >
             <Card
+            
             titulo={titulo}                                 
              contenido={contenido}
               fechacreacion={fechacreacion}
