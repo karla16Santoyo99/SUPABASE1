@@ -21,7 +21,7 @@ export default function RecordatorioAdd({session}) {
     async function getRecordatorios() {
         try {
             setLoading(true);
-            const user = supabase.auth.user();
+            const user = supabase.recordatorio.user();
 
             let { data, error, status } = await supabase
                 .from("recordatorio")
@@ -51,10 +51,10 @@ export default function RecordatorioAdd({session}) {
     async function AgregarRecordatorio({ titulo, fechacreacion, contenido, fecharecordatorio  }) {
         setLoading(true);
         try {            
-            const user = supabase.auth.user();
+            const user = supabase.recordatorio.user();
 
             const Agregar = {
-                id: user?.id,
+                id: user.id,
                 titulo, 
                 fechacreacion, 
                 contenido, 
@@ -71,7 +71,7 @@ export default function RecordatorioAdd({session}) {
                 throw error;
             }
         } catch (error) {
-            console.log(error);
+            
             alert(error.message);
         } finally {
             setLoading(false);
