@@ -16,6 +16,8 @@ export default function Account({ session }) {
             setLoading(true);
             const user = supabase.auth.user();
 
+            console.log(user);
+
             let { data, error, status } = await supabase
                 .from("profiles")
                 .select(`username, website, avatar_url`)
@@ -32,7 +34,7 @@ export default function Account({ session }) {
                 setAvatarUrl(data.avatar_url);
             }
         } catch (error) {
-            alert(error.message);
+            alert('twat'+error.message);
         } finally {
             setLoading(false);
         }
@@ -42,6 +44,8 @@ export default function Account({ session }) {
         try {
             setLoading(true);
             const user = supabase.auth.user();
+
+            console.log(user);
 
             const updates = {
                 id: user.id,

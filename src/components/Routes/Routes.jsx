@@ -99,7 +99,7 @@ export default function Rotas({ session }) {
                         <Route path='/Account' element={<Account key={session.user.id} session={session}  />}/>
                         <Route path='/Recordatorios' element={<Recordatorios key={session.user.id} session={session}  />}/>
                         <Route path='/AddRecordatorio' element={<AddRecordatorio key={session.user.id} session={session}/>}/>
-                        <Route path='/RecordatorioHome' element={<RecordatorioHome key={session.user.id} session={session}/>}/>
+                        <Route path='/' element={<RecordatorioHome key={session.user.id} session={session}/>}/>
             </Routes>
 
         </div>

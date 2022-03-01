@@ -7,6 +7,7 @@ import Routes from './components/Routes/Routes'
 
 
 export default function Home() {
+ // alert('hola');
   const [session, setSession] = useState(null)
 
   useEffect(() => {
