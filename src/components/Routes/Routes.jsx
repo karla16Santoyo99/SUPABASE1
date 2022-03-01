@@ -24,7 +24,6 @@ export default function Rotas({ session }) {
         getAccount();
     }, [session]);
 
-    //Recordatorios
 
     useEffect(() => {
         getRecordatorios();
