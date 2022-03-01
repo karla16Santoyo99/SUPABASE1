@@ -19,39 +19,40 @@ export default function RecordatorioAdd({session}) {
     }, [session]);
 
     async function getRecordatorios() {
-        try {
-            setLoading(true);
-            const user = supabase.recordatorio.user();
+       
+        // try {
+        //     setLoading(true);
+            
+        //     const user = supabase.auth.user();
+        //     //console.log('a'+user);
 
-            let { data, error, status } = await supabase
-                .from("recordatorio")
-                .select(`titulo, fechacreacion, contenido, fecharecordatorio `)
-                .eq("id", user?.id)
-                .single();
+        //     let { data, error, status } = await supabase
+        //         .from("recordatorio")
+        //         .select(`titulo, fechacreacion, contenido, fecharecordatorio `)
+        //         .eq("user.id", user?.id)
+        //         .single();
 
-            if (error && status !== 406) {
-                throw error;
-            }
+        //     if (error && status !== 406) {
+        //         throw error;
+        //     }
 
-            if (data) {
-                setTitulo(data.titulo);
-                setFechaCreacion(data.fechacreacion);
-                setContenido(data.contenido);
-                setFechaRecordatorio(data.fecharecordatorio);
-               console.log(data);
-            }
-        } catch (error) {
-            console.log(error);
-            alert(error.message);
-        } finally {
+        //     if (data) {
+        //         setTitulo(data.titulo);
+        //         setFechaCreacion(data.fechacreacion);
+        //         setContenido(data.contenido);
+        //         setFechaRecordatorio(data.fecharecordatorio);
+        //     }
+        // } catch (error) {
+        //     alert(error);
+        // } finally {
             setLoading(false);
-        }
+        //}
     }
 
     async function AgregarRecordatorio({ titulo, fechacreacion, contenido, fecharecordatorio  }) {
         setLoading(true);
         try {            
-            const user = supabase.recordatorio.user();
+            const user = supabase.auth.user();
 
             const Agregar = {
                 id: user.id,
@@ -59,7 +60,7 @@ export default function RecordatorioAdd({session}) {
                 fechacreacion, 
                 contenido, 
                 fecharecordatorio,
-                updated_at: new Date(),
+                
             };
 
                 
