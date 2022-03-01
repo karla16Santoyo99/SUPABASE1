@@ -84,7 +84,7 @@ export default function RecordatorioAdd({session}) {
         
         <div>
          <AppBar/> 
-         <p>Bievenido</p>
+         <h3>Aquí puedes agregar un Recordatorio</h3>
 
          
             <div>
