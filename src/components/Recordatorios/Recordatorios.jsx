@@ -57,7 +57,8 @@ export default function Recordatorios({ session }) {
                 fechacreacion, 
                 contenido, 
                 fecharecordatorio,
-             
+                user_id: user.id,
+                updated_at: new Date(),
             };
 
             let { error } = await supabase.from("recordatorio").upsert(updates, {

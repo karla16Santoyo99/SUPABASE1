@@ -3,6 +3,7 @@ import { supabase } from "../../config/supabaseClient";
 import AppBar from '../../components/AppBar';
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { use } from "i18next";
 
 
 
@@ -19,7 +20,7 @@ export default function RecordatorioAdd({session}) {
     }, [session]);
 
     async function getRecordatorios() {
-       
+        //alert('hwllo');
         // try {
         //     setLoading(true);
             
@@ -55,12 +56,13 @@ export default function RecordatorioAdd({session}) {
             const user = supabase.auth.user();
 
             const Agregar = {
-                id: user.id,
+                user_id: user.id,
                 titulo, 
                 fechacreacion, 
                 contenido, 
                 fecharecordatorio,
                 
+                updated_at: new Date(),
             };
 
                 
