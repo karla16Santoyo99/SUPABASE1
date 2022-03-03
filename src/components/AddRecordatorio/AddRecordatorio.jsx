@@ -3,7 +3,7 @@ import { supabase } from "../../config/supabaseClient";
 import AppBar from '../../components/AppBar';
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { use } from "i18next";
+
 
 
 
@@ -20,48 +20,25 @@ export default function RecordatorioAdd({session}) {
     }, [session]);
 
     async function getRecordatorios() {
-        //alert('hwllo');
-        // try {
-        //     setLoading(true);
-            
-        //     const user = supabase.auth.user();
-        //     //console.log('a'+user);
-
-        //     let { data, error, status } = await supabase
-        //         .from("recordatorio")
-        //         .select(`titulo, fechacreacion, contenido, fecharecordatorio `)
-        //         .eq("user.id", user?.id)
-        //         .single();
-
-        //     if (error && status !== 406) {
-        //         throw error;
-        //     }
-
-        //     if (data) {
-        //         setTitulo(data.titulo);
-        //         setFechaCreacion(data.fechacreacion);
-        //         setContenido(data.contenido);
-        //         setFechaRecordatorio(data.fecharecordatorio);
-        //     }
-        // } catch (error) {
-        //     alert(error);
-        // } finally {
+      
             setLoading(false);
-        //}
+     
     }
 
     async function AgregarRecordatorio({ titulo, fechacreacion, contenido, fecharecordatorio  }) {
         setLoading(true);
+        let cardid = parseInt( Math.random()*10000 );
         try {            
             const user = supabase.auth.user();
+            
 
             const Agregar = {
-                user_id: user.id,
+                id: user.id,
+                cardid: cardid,
                 titulo, 
                 fechacreacion, 
                 contenido, 
-                fecharecordatorio,
-                
+                fecharecordatorio, 
                 updated_at: new Date(),
             };
 
@@ -74,7 +51,7 @@ export default function RecordatorioAdd({session}) {
                 throw error;
             }
         } catch (error) {
-            
+            console.log("Si lo mandé jiji", cardid);
             alert(error.message);
         } finally {
             setLoading(false);

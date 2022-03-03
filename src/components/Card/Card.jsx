@@ -9,9 +9,9 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import { cyan } from '@mui/material/colors';
 
-export default function MultiActionAreaCard({ titulo, fechacreacion, contenido, fecharecordatorio }) {
+export default function MultiActionAreaCard({cardid, titulo, fechacreacion, contenido, fecharecordatorio }) {
   return (
-    <Card sx={{ display: 'flex', height: 150, width: 700, bgcolor: cyan[100] }}>
+    <Card sx={{ marginTop:2, display: 'flex', height: 'auto', width: 700, bgcolor: cyan[100] }}>
 
       <CardActionArea>
         <CardContent sx={{ flex: '1 3 auto' }}>
@@ -51,7 +51,7 @@ export default function MultiActionAreaCard({ titulo, fechacreacion, contenido, 
       </Button>
 
 <Button variant="outlined" endIcon={<SendIcon />}>
-        <Link to="/Recordatorios">
+        <Link onClick={() => (window.localStorage.setItem("id", cardid))}to="/Recordatorios">
           Editar
         </Link>
       </Button>

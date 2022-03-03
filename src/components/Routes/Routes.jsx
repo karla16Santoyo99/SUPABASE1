@@ -1,3 +1,4 @@
+import React from "react"
 import { useState, useEffect } from "react";
 import { supabase } from "../../config/supabaseClient";
 import AppBar from '../../components/AppBar';
